@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Navbar.module.css";
+import styles from "./navbar.module.css";
 import logo from "../../assets/aemllogo.png";
 
 const Navbar = () => {
@@ -11,10 +11,10 @@ const Navbar = () => {
             <a href="#home">Tentang AEML</a>
           </li>
           <li>
-            <a href="#about">Artikel</a>
+            <a href="#kegiatan">Kegiatan</a>
           </li>
           <li>
-            <a href="#services">Publikasi</a>
+            <a href="#publikasi">Publikasi</a>
           </li>
         </ul>
         <div className={styles.logo}>
