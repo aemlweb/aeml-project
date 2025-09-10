@@ -3,14 +3,16 @@ import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Publikasi/Header";
 import "./index.css";
 import Content from "./components/Publikasi/Content";
+import HomePage from "./components/HomePage/HomePage";
 
 function App() {
   return (
     <>
       <Navbar />
       <main className="container">
-        <Header />
-        <Content />
+        <HomePage />
+        {/* <Header />
+        <Content /> */}
       </main>
     </>
   );
