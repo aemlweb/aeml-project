@@ -4,6 +4,7 @@ import Header from "./components/Publikasi/Header";
 import "./index.css";
 import Content from "./components/Publikasi/Content";
 import HomePage from "./components/HomePage/HomePage";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         {/* <Header />
         <Content /> */}
       </main>
+      <Footer />
     </>
   );
 }
