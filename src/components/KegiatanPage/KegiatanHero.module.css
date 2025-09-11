@@ -47,19 +47,22 @@
 
 /* Button fixed size (231x52) */
 .heroCta {
-  background-color: #A3E221;
+  background-color: #a3e221;
   border: none;
   color: black;
   font-weight: 600;
   width: 231px;
   height: 52px;
-  border-radius: 8px;
+  border-radius: 9999px; /* <-- fully rounded pill style */
   cursor: pointer;
-  transition: background 0.2s ease-in-out;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  font-family: "Instrument Sans", sans-serif;
 }
 
 .heroCta:hover {
-  background-color: #8fd01c;
+  background-color: #3b82f6;
+  color: white; /* optional to match hover from btnPrimary */
 }
 
 /* Right Side: Image */
@@ -72,3 +75,4 @@
   height: 100%;
   object-fit: cover;
 }
+

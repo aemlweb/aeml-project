@@ -8,13 +8,13 @@ const Navbar = () => {
       <div className={styles.containerMargin}>
         <ul className={styles.navLinks}>
           <li>
-            <a href="#home">Tentang AEML</a>
+            <a href="/">Tentang AEML</a>
           </li>
           <li>
-            <a href="#kegiatan">Kegiatan</a>
+            <a href="kegiatan">Kegiatan</a>
           </li>
           <li>
-            <a href="#publikasi">Publikasi</a>
+            <a href="publikasi">Publikasi</a>
           </li>
         </ul>
         <div className={styles.logo}>
