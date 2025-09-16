@@ -1,5 +1,6 @@
 import Feedback from "../Feedback/Feedback";
 import CarouselHome from "./CarouselHome";
+import FeedbackHome from "./FeedbackHome";
 import HeaderHome from "./HeaderHome";
 import LogoCompany from "./LogoCompany";
 import Mitra from "./Mitra";
@@ -19,10 +20,11 @@ function HomePage() {
       <Publikasi />
       <Video />
       <Mitra />
-      <Feedback
+      <FeedbackHome />
+      {/* <Feedback
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-      />{" "}
+      />{" "} */}
     </>
   );
 }

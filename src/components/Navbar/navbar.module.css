@@ -3,8 +3,10 @@
   align-items: center;
   justify-content: center;
   background-color: white;
-  color: #181818; /* changed from #fff, because white text on white bg is invisible */
-  position: relative; /* 🔑 make navbar the positioning context */
+  color: #181818;
+  position: sticky;
+  top: 0; /* Add this - defines where it sticks */
+  z-index: 1000; /* Add this - ensures it stays above other content */
 }
 
 .navbar::after {
@@ -12,9 +14,15 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 3px; /* thickness of border */
+  height: 3px;
   width: 100%;
   background: linear-gradient(to right, #0c4fd3, #a3e221);
+  opacity: 0; /* Hide by default */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.navbar.scrolled::after {
+  opacity: 1; /* Show when scrolled */
 }
 
 /* kiri */
@@ -27,6 +35,11 @@
 .img {
   width: 170px;
   height: 85px;
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
 }
 
 .containerMargin {
@@ -51,7 +64,7 @@
 
 .navLinks a {
   color: #181818;
-  font-family: "Instrument Sans", sans-serif;
+  font-family: "Epilogue", sans-serif;
   transition: color 0.3s ease;
   font-weight: 400;
   font-size: 16px;
@@ -71,11 +84,21 @@
   font-family: "Instrument Sans", sans-serif;
   font-size: 16px;
   border: 2px solid #181818;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.button:hover {
+  border: 3px solid #181818;
+  font-weight: 700;
 }
 
 .buttonLang {
-  background-color: #dedede;
-  color: #181818;
+  background: linear-gradient(90deg, #0c4fd3 0%, #256eff 100%);
+  color: white;
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 32px;
@@ -85,8 +108,43 @@
   border: none;
 }
 
-.button:hover {
-  background-color: #2563eb;
+.buttonLang:hover {
+  background: linear-gradient(90deg, #a3e221 0%, #81bb09 100%);
+}
+
+.buttonId {
+  background-color: white;
+  color: #181818;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 32px;
+  transition: background-color 0.3s ease;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 16px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.about {
+  background-color: white;
+  color: #181818;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Epilogue", sans-serif;
+  font-size: 16px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+  margin: 0;
 }
 
 .end {

@@ -1,16 +1,16 @@
 .heroWrapper {
-  max-width: 1280px;
+  max-width: 1440px;
   align-items: center;
 }
 
 .heroContainer {
   position: relative;
-  background: url("../../assets/changes.png") no-repeat center center/contain;
+  background: url("../../assets/headernew.png") no-repeat center center/contain;
   height: 597px;
   overflow: hidden;
   display: flex;
   align-items: center;
-  color: white;
+  color: #1b3974;
   width: 1280px;
 }
 
@@ -87,16 +87,17 @@
   display: flex;
   gap: 24px;
   align-items: center;
-  width: 1280px;
+  width: 1440px;
   padding-top: 70px;
   padding-bottom: 138px;
+  padding-left: 100px;
+  justify-content: center;
 }
 
 .left {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-left: 120px;
+  gap: 6px;
 }
 
 .right {
@@ -121,12 +122,13 @@
   line-height: 150%;
   max-width: 410px;
   font-family: "Instrument Sans", sans-serif;
+  margin: 0;
 }
 
 .stats {
   display: flex;
   gap: 18px;
-  margin-top: 20px;
+  margin-top: 33px;
 }
 
 .card {
@@ -141,10 +143,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-.card:hover {
-  transform: translateY(-2px);
 }
 
 .card h3 {
@@ -175,10 +173,6 @@
 /* even slides */
 .evenImage {
   height: 350px;
-}
-
-.carouselImage:hover {
-  transform: scale(1.02);
 }
 
 /* Swiper Navigation Buttons Styling */
@@ -236,9 +230,8 @@
 }
 
 .containerNews {
-  max-width: 1280px;
+  width: 1081px;
   margin: 0 auto;
-  padding: 40px 20px;
 }
 
 .titleLogo {
@@ -261,8 +254,7 @@
 .logoTrack {
   display: flex;
   align-items: center;
-  gap: 60px;
-  animation-duration: 30s;
+  animation-duration: 60s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -277,18 +269,13 @@
 
 .logoItem {
   flex-shrink: 0;
-  padding: 20px 30px;
+  padding: 10px 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-width: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-}
-
-.logoItem:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
 .logo {
@@ -352,7 +339,7 @@
 
 .logoImage {
   max-width: fit-content !important;
-  height: 46px !important;
+  height: 58px !important;
 }
 
 /* Animations */
@@ -375,7 +362,7 @@
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 1.5rem;
   height: fit-content;
@@ -410,13 +397,13 @@
 }
 
 .readMore:hover {
-  color: #1d4ed8;
+  text-decoration: underline;
 }
 
 .newsGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 12px;
 }
 
 @media (min-width: 1024px) {
@@ -439,10 +426,6 @@
   width: 448px;
   height: 709px;
   align-items: center;
-}
-
-.featuredCard:hover {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .featuredImageContainer {
@@ -495,7 +478,7 @@
 .regularGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 17px;
 }
 
 @media (min-width: 768px) {
@@ -508,10 +491,6 @@
   background: white;
   height: 303px;
   width: 302px;
-}
-
-.regularCard:hover {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .regularImageContainer {
@@ -527,7 +506,7 @@
 }
 
 .regularImage:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
 
 .regularContent {
@@ -619,9 +598,9 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
-  margin-left: 111px;
-  margin-right: 111px;
   margin-top: 31px;
+  margin-left: 111px;
+  margin-right: 112px;
 }
 
 .publicationsTitle {
@@ -642,18 +621,15 @@
 }
 
 .viewAllLink:hover {
-  color: #357abd;
+  text-decoration: underline;
 }
 
 .publicationsGrid {
   max-width: 1200px;
-  margin-left: 111px;
-  margin-right: 111px;
-
   display: flex;
   flex-wrap: wrap; /* biar bisa turun ke bawah */
-  gap: 32px; /* jarak antar item */
-  justify-content: center; /* selalu center */
+  gap: 44px; /* jarak antar item */
+  margin-left: 111px;
 }
 
 .publicationCard {
@@ -670,10 +646,10 @@
   gap: 8px;
 }
 
-.publicationCard:hover {
+/* .publicationCard:hover {
   transform: translateY(-8px);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
-}
+} */
 
 .btnRead {
   background: #e8f9ff;
@@ -787,9 +763,8 @@
   justify-content: center;
   min-height: 600px;
   overflow: hidden;
-  width: 1280px;
-  background: url("../../assets/background.png") no-repeat center bottom /
-    contain;
+  width: 1440px;
+  background: url("../../assets/newframe.png") no-repeat center bottom / contain;
   background-size: 102%; /* 100% = default contain width, 150% = 1.5x lebih besar */
 }
 
@@ -938,9 +913,8 @@
 }
 
 .learnMoreButton:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border: 3px solid #000000;
+  font-weight: 700;
 }
 
 .arrowIcon {
@@ -1013,7 +987,7 @@
 
 .partnersSection {
   padding: 80px 40px;
-  width: 1280px;
+  width: 1440px;
   margin: 0 auto;
 }
 
@@ -1047,17 +1021,11 @@
 
 .partnerCard {
   width: fit-content;
-  max-width: 320px;
   max-height: 107px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-
-.partnerCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .logoContainer {
@@ -1117,7 +1085,7 @@
 
   .partnersGrid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
+    gap: 12px;
   }
 
   .partnerCard {

@@ -136,8 +136,6 @@
 
 .navLink:hover {
   color: white;
-  padding-left: 8px;
-  transform: translateX(4px);
 }
 
 /* Tablet Responsive */
