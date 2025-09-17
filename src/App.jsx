@@ -5,15 +5,17 @@ import "./index.css";
 import Content from "./components/Publikasi/Content";
 import HomePage from "./components/HomePage/HomePage";
 import Footer from "./components/Footer/Footer";
+import ScrollNavigation from "./components/About/ScrollNavigation";
 
 function App() {
   return (
     <>
       <Navbar />
       <main className="container">
-        <HomePage />
+        {/* <HomePage /> */}
         {/* <Header />
         <Content /> */}
+        <ScrollNavigation />
       </main>
       <Footer />
     </>
