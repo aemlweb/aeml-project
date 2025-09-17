@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom"; // ✅ import react-router-dom
 import styles from "./navbar.module.css";
 import logo from "../../assets/aemllogo.png";
 import logobrowse from "../../assets/image-rils.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation(); // ✅ get current path for active state
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,7 +16,6 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup function to remove event listener
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -25,7 +26,12 @@ const Navbar = () => {
       <div className={styles.containerMargin}>
         <ul className={styles.navLinks}>
           <li>
-            <div className={styles.about}>
+            <Link
+              to="/about"
+              className={`${styles.navLink} ${
+                location.pathname === "/about" ? styles.active : ""
+              }`}
+            >
               Tentang AEML
               <svg
                 width="8"
@@ -38,25 +44,48 @@ const Navbar = () => {
                   d="M7.06 0.530273L4 3.58361L0.94 0.530273L0 1.47027L4 5.47027L8 1.47027L7.06 0.530273Z"
                   fill="#181818"
                 />
-              </svg>{" "}
-            </div>{" "}
+              </svg>
+            </Link>
           </li>
           <li>
-            <a href="#about">Artikel</a>
+            {/* Replace with a route instead of hash anchor if you have pages */}
+            <Link
+              to="/artikel"
+              className={`${
+                location.pathname === "/artikel" ? styles.active : ""
+              }`}
+            >
+              Artikel
+            </Link>
           </li>
           <li>
-            <a href="#services">Publikasi</a>
+            <Link
+              to="/publikasi"
+              className={`${
+                location.pathname === "/publikasi" ? styles.active : ""
+              }`}
+            >
+              Publikasi
+            </Link>
           </li>
         </ul>
+
         <div className={styles.logo}>
-          <img src={logo} className={styles.img}></img>
+          <Link to="/">
+            {" "}
+            {/* ✅ Logo clickable to homepage */}
+            <img src={logo} alt="AEML Logo" className={styles.img} />
+          </Link>
         </div>
+
         <div className={styles.end}>
           <button className={styles.button}>
             <img src={logobrowse} alt="" className={styles.icon} />
             Infomolis.id
-          </button>{" "}
-          <button className={styles.buttonLang}>Gabung AEML</button>
+          </button>
+          <Link to="/join">
+            <button className={styles.buttonLang}>Gabung AEML</button>
+          </Link>
           <button className={styles.buttonId}>
             ID
             <svg
@@ -70,8 +99,8 @@ const Navbar = () => {
                 d="M7.06 0.530273L4 3.58361L0.94 0.530273L0 1.47027L4 5.47027L8 1.47027L7.06 0.530273Z"
                 fill="#181818"
               />
-            </svg>{" "}
-          </button>{" "}
+            </svg>
+          </button>
         </div>
       </div>
     </nav>

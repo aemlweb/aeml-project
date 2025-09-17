@@ -1,24 +1,25 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Header from "./components/Publikasi/Header";
-import "./index.css";
-import Content from "./components/Publikasi/Content";
-import HomePage from "./components/HomePage/HomePage";
 import Footer from "./components/Footer/Footer";
+import HomePage from "./components/HomePage/HomePage";
+// import PublikasiPage from "./pages/PublikasiPage";
+import "./index.css";
 import ScrollNavigation from "./components/About/ScrollNavigation";
 
 function App() {
   return (
-    <>
+    <Router>
       <Navbar />
       <main className="container">
-        {/* <HomePage /> */}
-        {/* <Header />
-        <Content /> */}
-        <ScrollNavigation />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          {/* <Route path="/publikasi" element={ />} /> */}
+          <Route path="/about" element={<ScrollNavigation />} />
+        </Routes>
       </main>
       <Footer />
-    </>
+    </Router>
   );
 }
 

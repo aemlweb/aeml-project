@@ -73,6 +73,13 @@
   color: #3b82f6;
 }
 
+.navLink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
 /* kanan */
 .button {
   background-color: white;
