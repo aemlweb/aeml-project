@@ -1,0 +1,251 @@
+.footer {
+  position: relative;
+  background: linear-gradient(94.48deg, #0c4fd3 4.4%, #a3e221 173.44%);
+
+  color: white;
+  padding: 80px 0 60px 0;
+  overflow: hidden;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+.curvedBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.curveSvg {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  opacity: 0.6;
+}
+
+.footerContent {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+}
+
+.footerLogo {
+  height: 119px;
+  width: auto;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contactIcon {
+  width: 20px;
+  height: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contactItem span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.rightSection {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navGrid {
+  /* display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 600px; */
+
+  display: flex;
+  flex-wrap: wrap; /* biar bisa turun ke bawah */
+  gap: 40px; /* jarak antar item */
+  justify-content: center; /* selalu center */
+}
+
+.navColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.navTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  padding-bottom: 8px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.navItem {
+  margin: 0;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+}
+
+.navLink:hover {
+  color: white;
+}
+
+/* Tablet Responsive */
+@media (max-width: 968px) {
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 0 30px;
+  }
+
+  .rightSection {
+    justify-content: center;
+  }
+
+  .navGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 500px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 0 40px 0;
+  }
+
+  .footerContent {
+    padding: 0 20px;
+    gap: 40px;
+  }
+
+  .leftSection {
+    gap: 30px;
+    text-align: center;
+  }
+
+  .contactInfo {
+    align-items: center;
+  }
+
+  .contactItem {
+    justify-content: center;
+    text-align: left;
+    max-width: 300px;
+  }
+
+  .navGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+
+  .navTitle {
+    font-size: 1rem;
+  }
+
+  .navLink:hover {
+    padding-left: 0;
+    transform: none;
+  }
+
+  .curveSvg {
+    top: 10%;
+    height: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 0 30px 0;
+  }
+
+  .footerContent {
+    padding: 0 16px;
+    gap: 32px;
+  }
+
+  .footerLogo {
+    height: 50px;
+  }
+
+  .navGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 250px;
+  }
+
+  .contactItem {
+    font-size: 0.9rem;
+  }
+
+  .contactIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Animation for smooth loading */
+.footerContent {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

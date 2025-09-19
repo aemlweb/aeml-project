@@ -1,32 +1,26 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import HomePage from "./components/HomePage/HomePage";
-import KegiatanPages from "./components/KegiatanPage/KegiatanPages";
-import Header from "./components/Publikasi/Header";
-import Content from "./components/Publikasi/Content";
+// import PublikasiPage from "./pages/PublikasiPage";
 import "./index.css";
+import ScrollNavigation from "./components/About/ScrollNavigation";
+import About from "./components/About/About";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Navbar />
       <main className="container">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/kegiatan" element={<KegiatanPages />} />
-          <Route
-            path="/publikasi"
-            element={
-              <>
-                <Header />
-                <Content />
-              </>
-            }
-          />
+          {/* <Route path="/publikasi" element={ />} /> */}
+          <Route path="/about" element={<ScrollNavigation />} />
         </Routes>
       </main>
-    </BrowserRouter>
+      <Footer />
+    </Router>
   );
 }
 
