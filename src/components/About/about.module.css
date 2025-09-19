@@ -3,12 +3,58 @@
 .container {
   display: flex;
   min-height: 100vh;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.aboutContainer {
+  width: 1440px;
+  height: 711px;
+  background: linear-gradient(180deg, #ffffff 6.54%, #c4d8ff 70.6%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutContainer .swiper {
+  width: 100%;
+  max-width: 1062px; /* Adjust the max width as needed */
+}
+
+.carouselImageHead {
+  width: 1062px !important;
+  height: 505px !important;
+}
+
+.aboutPage {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.titleAbout {
+  font-family: "Epilogue", sans-serif;
+  font-size: 52px;
+  line-height: 150%;
+  color: #181818;
+  max-width: 1062px;
+}
+
+.containerImageHead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroWrapper {
+  background-color: #181818;
 }
 
 /* Sidebar Styles */
 .sidebar {
   height: 638px;
-  position: fixed;
+  position: relative;
   overflow-y: auto;
   z-index: 9;
 }
@@ -90,8 +136,7 @@
 
 /* Main Content Styles */
 .content {
-  margin-left: 300px;
-  flex: 1;
+  margin-left: 40px;
   width: 800px;
   text-align: justify;
 }
@@ -341,6 +386,10 @@
   width: auto;
   height: auto;
   object-fit: contain;
+}
+
+.aboutContainer :global(.swiper-slide) {
+  margin-right: 0px !important;
 }
 
 .partnersGrid {

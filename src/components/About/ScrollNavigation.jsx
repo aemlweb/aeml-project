@@ -42,6 +42,7 @@ import gotoLogo from "../../assets/logos/goto-logo.png";
 import dbsLogo from "../../assets/logos/dbs-logo.png";
 import gesitsLogo from "../../assets/logos/gesits-logo.png";
 import alvaLogo from "../../assets/logos/alva-logo.png";
+import HeaderAbout from "./HeaderAbout";
 
 const ScrollNavigation = () => {
   const [activeSection, setActiveSection] = useState("tentang-aeml");
@@ -225,6 +226,13 @@ const ScrollNavigation = () => {
       logo: image6,
       alt: "IESR Institute for Essential Services Reform",
     },
+  ];
+
+  const photos = [
+    "https://picsum.photos/id/1011/800/500",
+    "https://picsum.photos/id/1015/800/500",
+    "https://picsum.photos/id/1016/800/500",
+    "https://picsum.photos/id/1025/800/500",
   ];
 
   // Handle scroll to section
@@ -529,66 +537,92 @@ const ScrollNavigation = () => {
   };
 
   return (
-    <div className={styles.container}>
-      {/* Left Sidebar Navigation */}
-      <div className={styles.sidebar}>
-        <div className={styles.sidebarContent}>
-          <nav className={styles.menu}>
-            {menuItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`${styles.menuItem} ${
-                  activeSection === item.id ? styles.active : ""
-                }`}
-              >
-                <span className={styles.label}>{item.label}</span>
-              </button>
-            ))}
-          </nav>
-        </div>
+    <div className={styles.aboutPage}>
+      <div className={styles.aboutContainer}>
+        <h1 className={styles.titleAbout}>
+          Memajukan ekosistem mobilitas listrik di Indonesia sehingga berkelas
+          dunia.
+        </h1>
+        <Swiper
+          spaceBetween={30} // Add some space between slides
+          slidesPerView={1} // Show only 1 slide at a time
+          loop={true}
+          navigation={true}
+          centeredSlides={true} // Center the slide
+          modules={[Navigation]}
+        >
+          {photos.map((src, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={src}
+                alt={`Event ${index + 1}`}
+                className={styles.carouselImageHead}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
+      <div className={styles.container}>
+        <div className={styles.sidebar}>
+          <div className={styles.sidebarContent}>
+            <nav className={styles.menu}>
+              {menuItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`${styles.menuItem} ${
+                    activeSection === item.id ? styles.active : ""
+                  }`}
+                >
+                  <span className={styles.label}>{item.label}</span>
+                </button>
+              ))}
+            </nav>
+          </div>
+        </div>
 
-      {/* Main Content */}
-      <div className={styles.content}>
-        {/* Header */}
-        <header className={styles.header}>
-          <h1 className={styles.mainTitle}>
-            Asosiasi Ekosistem Mobilitas Listrik
-          </h1>
-          <p className={styles.description}>
-            Asosiasi Ekosistem Mobilitas Listrik (AEML) adalah sebuah forum
-            kolaboratif yang mempertemukan para pemangku kepentingan utama dalam
-            pengembangan kendaraan listrik di Indonesia, mulai dari produsen
-            kendaraan, penyedia baterai, infrastruktur pengisian daya, hingga
-            pelaku teknologi digital dan keuangan.
-            <br></br>
-            <br></br>
-            AEML berperan sebagai wadah industri, pusat pemikiran, serta advokat
-            kebijakan publik yang mendorong terciptanya ekosistem mobilitas
-            listrik yang berdaya saing global. Melalui sinergi lintas sektor,
-            asosiasi ini berkomitmen untuk mempercepat adopsi kendaraan listrik,
-            memperkuat rantai pasok domestik, serta mendukung transisi menuju
-            energi bersih dan transportasi berkelanjutan di Indonesia.
-          </p>
-        </header>
+        {/* Main Content */}
+        <div className={styles.content}>
+          {/* Header */}
+          <header className={styles.header}>
+            <h1 className={styles.mainTitle}>
+              Asosiasi Ekosistem Mobilitas Listrik
+            </h1>
+            <p className={styles.description}>
+              Asosiasi Ekosistem Mobilitas Listrik (AEML) adalah sebuah forum
+              kolaboratif yang mempertemukan para pemangku kepentingan utama
+              dalam pengembangan kendaraan listrik di Indonesia, mulai dari
+              produsen kendaraan, penyedia baterai, infrastruktur pengisian
+              daya, hingga pelaku teknologi digital dan keuangan.
+              <br></br>
+              <br></br>
+              AEML berperan sebagai wadah industri, pusat pemikiran, serta
+              advokat kebijakan publik yang mendorong terciptanya ekosistem
+              mobilitas listrik yang berdaya saing global. Melalui sinergi
+              lintas sektor, asosiasi ini berkomitmen untuk mempercepat adopsi
+              kendaraan listrik, memperkuat rantai pasok domestik, serta
+              mendukung transisi menuju energi bersih dan transportasi
+              berkelanjutan di Indonesia.
+            </p>
+          </header>
 
-        {/* Sections */}
-        {menuItems.map((item) => (
-          <section
-            key={item.id}
-            ref={(el) => (sectionsRef.current[item.id] = el)}
-            className={styles.section}
-          >
-            <div className={styles.sectionCard}>
-              <h2 className={styles.sectionTitle}>{item.label}</h2>
-              {renderSectionContent(item)}
-            </div>
-          </section>
-        ))}
+          {/* Sections */}
+          {menuItems.map((item) => (
+            <section
+              key={item.id}
+              ref={(el) => (sectionsRef.current[item.id] = el)}
+              className={styles.section}
+            >
+              <div className={styles.sectionCard}>
+                <h2 className={styles.sectionTitle}>{item.label}</h2>
+                {renderSectionContent(item)}
+              </div>
+            </section>
+          ))}
 
-        {/* Footer spacer */}
-        <div className={styles.footer}></div>
+          {/* Footer spacer */}
+          <div className={styles.footer}></div>
+        </div>
       </div>
     </div>
   );

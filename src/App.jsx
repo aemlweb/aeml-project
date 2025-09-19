@@ -6,6 +6,7 @@ import HomePage from "./components/HomePage/HomePage";
 // import PublikasiPage from "./pages/PublikasiPage";
 import "./index.css";
 import ScrollNavigation from "./components/About/ScrollNavigation";
+import About from "./components/About/About";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           {/* <Route path="/publikasi" element={ />} /> */}
-          <Route path="/about" element={<ScrollNavigation />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </main>
       <Footer />
