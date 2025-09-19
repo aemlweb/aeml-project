@@ -22,7 +22,7 @@ export default function HeaderHome() {
       <div className={styles.heroButtons}>
         <button
           className={styles.btnPrimary}
-          onClick={() => navigate("/tentang")}
+          onClick={() => navigate("/about")}
         >
           Tentang AEML
         </button>
