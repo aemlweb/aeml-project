@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           {/* <Route path="/publikasi" element={ />} /> */}
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<ScrollNavigation />} />
         </Routes>
       </main>
       <Footer />
