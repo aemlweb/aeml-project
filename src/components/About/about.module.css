@@ -10,7 +10,7 @@
   height: 638px;
   position: fixed;
   overflow-y: auto;
-  z-index: 10;
+  z-index: 9;
 }
 
 .sidebar::after {
@@ -92,14 +92,14 @@
 .content {
   margin-left: 300px;
   flex: 1;
-  width: 580px;
-  margin-right: 220px;
+  width: 800px;
   text-align: justify;
 }
 
 /* Header Styles */
 .header {
   margin-bottom: 48px;
+  padding-right: 220px;
 }
 
 .mainTitle {
@@ -243,6 +243,131 @@
   display: flex;
   flex-direction: row;
   gap: 67px;
+  margin-right: 220px;
+}
+
+.way {
+  margin-right: 220px;
+}
+
+.containerPhotos {
+  width: 234px;
+  height: 310px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: start;
+  margin-left: -20px;
+}
+
+.carouselImage {
+  width: 234px;
+  height: 295px;
+  margin-bottom: 12px;
+}
+
+.name {
+  color: #181818;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.title {
+  color: #4e4e4e;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.titleBoard {
+  color: #181818;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  z-index: 999 !important;
+  pointer-events: auto !important;
+  width: 35px !important;
+  height: 35px;
+  margin-bottom: 200px !important;
+}
+
+.swiper {
+  --swiper-navigation-disabled-opacity: 0;
+}
+
+.lead .swiper .swiper-button-prev.swiper-button-disabled,
+.lead .swiper .swiper-button-next.swiper-button-disabled {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.partnerLogo {
+  max-width: 204px;
+  max-height: 122px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.companyLogo {
+  max-width: 127px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.govLogo {
+  max-width: 230px;
+  max-height: 105px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.partnersGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+  justify-content: left;
+  padding-top: 40px;
+  align-items: center;
+}
+
+.partnersGridGov {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: left;
+  padding-top: 40px;
+  align-items: center;
+}
+
+.partnersGridMitra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: left;
+  padding-top: 40px;
+  align-items: center;
 }
 
 /* Responsive Design */

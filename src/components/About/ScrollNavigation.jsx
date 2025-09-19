@@ -4,6 +4,44 @@ import styles from "./about.module.css";
 import visi1 from "../../assets/visi1.png";
 import visi2 from "../../assets/visi2.png";
 import profil from "../../assets/foto-profil.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "../../global.css";
+
+import govEkonomi from "../../assets/logos-gov/ekonomi.png";
+import govInvest from "../../assets/logos-gov/invest.png";
+import industri from "../../assets/logos-gov/industri.png";
+import energi from "../../assets/logos-gov/energi.png";
+import lh from "../../assets/logos-gov/lh.png";
+import transportasi from "../../assets/logos-gov/transport.png";
+import dki from "../../assets/logos-gov/dki.png";
+
+import image1 from "../../assets/logos-gov/image1.png";
+import image2 from "../../assets/logos-gov/image2.png";
+import image3 from "../../assets/logos-gov/image3.png";
+import image4 from "../../assets/logos-gov/image4.png";
+import image5 from "../../assets/logos-gov/image5.png";
+import image6 from "../../assets/logos-gov/image6.png";
+
+import airlangga from "../../assets/airlangga.png";
+import defaultPhoto from "../../assets/default.png";
+
+import pertaminaLogo from "../../assets/logos/pertamina-logo.png";
+import tbsLogo from "../../assets/logos/tbs-logo.png";
+import plnLogo from "../../assets/logos/pln-logo.png";
+import electrumLogo from "../../assets/logos/electrum-logo.png";
+import ibcLogo from "../../assets/logos/ibc-logo.png";
+import vktrLogo from "../../assets/logos/vktr-logo.png";
+import voltaLogo from "../../assets/logos/volta-logo.png";
+import casionLogo from "../../assets/logos/casion-logo.png";
+import grabLogo from "../../assets/logos/grab-logo.png";
+import gotoLogo from "../../assets/logos/goto-logo.png";
+import dbsLogo from "../../assets/logos/dbs-logo.png";
+import gesitsLogo from "../../assets/logos/gesits-logo.png";
+import alvaLogo from "../../assets/logos/alva-logo.png";
 
 const ScrollNavigation = () => {
   const [activeSection, setActiveSection] = useState("tentang-aeml");
@@ -13,11 +51,180 @@ const ScrollNavigation = () => {
     { id: "visi", label: "Visi AEML", icon: "🎯" },
     { id: "misi", label: "Misi AEML", icon: "🎯" },
     { id: "perjalanan-bersama", label: "Perjalanan Bersama", icon: "🤝" },
-    { id: "tentang-aeml", label: "Tentang AEML", icon: "📋" },
-    { id: "pimpinan-aeml", label: "Pimpinan AEML", icon: "👥" },
+    { id: "pimpinan-aeml", label: "Struktur AEML", icon: "👥" },
+
+    // { id: "tentang-aeml", label: "Tentang AEML", icon: "📋" },
     { id: "perusahaan-anggota", label: "Perusahaan Anggota", icon: "🏢" },
     { id: "mitra-pemerintahan", label: "Mitra Pemerintahan", icon: "🏛️" },
     { id: "mitra-pembangunan", label: "Mitra Pembangunan", icon: "🔧" },
+  ];
+
+  const logos = [
+    {
+      name: "ALVA",
+      image: alvaLogo,
+      alt: "ALVA Logo",
+    },
+    { name: "PERTAMINA", style: "pertamina", image: pertaminaLogo },
+    { name: "TBS", style: "tbs", image: tbsLogo },
+    { name: "PLN", style: "pln", image: plnLogo },
+    { name: "electrum", style: "electrum", image: electrumLogo },
+    { name: "IBC", style: "ibc", image: ibcLogo },
+    { name: "VKTR", style: "vktr", image: vktrLogo },
+    { name: "VOLTA", style: "volta", image: voltaLogo },
+    { name: "GASION", style: "gasion", image: casionLogo },
+    { name: "Grab", style: "grab", image: grabLogo },
+    { name: "goto", style: "goto", image: gotoLogo },
+    { name: "DBS", style: "dbs", image: dbsLogo },
+    { name: "GESITS", style: "gesits", image: gesitsLogo },
+  ];
+
+  const lead = [
+    {
+      id: "1",
+      name: "Airlangga Hartarto",
+      title: "Chairman of Board of Patrons",
+      description:
+        "Chairman of Indonesia Chamber of Commerce (KADIN Indonesia)",
+      image: airlangga,
+    },
+    {
+      id: "2",
+      name: "Agus Gumiwang Kartasasmita",
+      title: "Member of Board of Patrons",
+      description:
+        "Chairman of Indonesia Chamber of Commerce (KADIN Indonesia)",
+      image: defaultPhoto,
+    },
+    {
+      id: "1",
+      name: "Pandu Sjahrir",
+      title: "Lead",
+      description: "asdfh kfjfnfjjf dkkeoeow",
+      image: defaultPhoto,
+    },
+    {
+      id: "1",
+      name: "Pandu Sjahrir",
+      title: "Lead",
+      description: "asdfh kfjfnfjjf dkkeoeow",
+      image: defaultPhoto,
+    },
+    {
+      id: "1",
+      name: "Pandu Sjahrir",
+      title: "Lead",
+      description: "asdfh kfjfnfjjf dkkeoeow",
+      image: defaultPhoto,
+    },
+
+    {
+      id: "1",
+      name: "Pandu Sjahrir",
+      title: "Lead",
+      description: "asdfh kfjfnfjjf dkkeoeow",
+      image: defaultPhoto,
+    },
+
+    {
+      id: "1",
+      name: "Pandu Sjahrir",
+      title: "Lead",
+      description: "asdfh kfjfnfjjf dkkeoeow",
+      image: defaultPhoto,
+    },
+
+    {
+      id: "1",
+      name: "Pandu Sjahrir",
+      title: "Lead",
+      description: "asdfh kfjfnfjjf dkkeoeow",
+      image: defaultPhoto,
+    },
+  ];
+
+  const governmentPartners = [
+    {
+      id: 1,
+      name: "Coordinating Ministry of Economics Affairs",
+      logo: govEkonomi,
+      alt: "Coordinating Ministry of Economics Affairs of the Republic of Indonesia",
+    },
+    {
+      id: 2,
+      name: "Coordinating Ministry of Investment & Maritime Affairs",
+      logo: govInvest,
+      alt: "Coordinating Ministry of Investment & Maritime Affairs of the Republic of Indonesia",
+    },
+    {
+      id: 3,
+      name: "Ministry of Industry",
+      logo: industri,
+      alt: "Ministry of Industry of the Republic of Indonesia",
+    },
+    {
+      id: 4,
+      name: "Ministry of Energy & Mineral Resources",
+      logo: energi,
+      alt: "Ministry of Energy & Mineral Resources of the Republic of Indonesia",
+    },
+    {
+      id: 5,
+      name: "Ministry of Environment",
+      logo: lh,
+      alt: "Ministry of Environment of the Republic of Indonesia",
+    },
+    {
+      id: 6,
+      name: "Ministry of Transportation",
+      logo: transportasi,
+      alt: "Ministry of Transportation of the Republic of Indonesia",
+    },
+    {
+      id: 7,
+      name: "Jakarta Provincial Government",
+      logo: dki,
+      alt: "Jakarta Provincial Government",
+    },
+  ];
+
+  const developmentPartners = [
+    {
+      id: 1,
+      name: "ClimateWorks Foundation",
+      logo: image1,
+      alt: "ClimateWorks Foundation",
+    },
+    {
+      id: 2,
+      name: "IFC International Finance Corporation",
+      logo: image2,
+      alt: "IFC International Finance Corporation World Bank Group",
+    },
+    {
+      id: 3,
+      name: "Clean Air Asia",
+      logo: image3,
+      alt: "Clean Air Asia",
+    },
+    {
+      id: 4,
+      name: "RMI Energy Transformed",
+      logo: image4,
+      alt: "RMI Energy Transformed",
+    },
+    {
+      id: 5,
+      name: "Kearney",
+      logo: image5,
+      alt: "Kearney",
+    },
+    {
+      id: 6,
+      name: "IESR Institute for Essential Services Reform",
+      logo: image6,
+      alt: "IESR Institute for Essential Services Reform",
+    },
   ];
 
   // Handle scroll to section
@@ -151,6 +358,139 @@ const ScrollNavigation = () => {
                 Indonesia.
               </p>
             </div>
+          </div>
+        );
+
+      case "pimpinan-aeml":
+        return (
+          <div className={styles.grid}>
+            <div className={styles.lead}>
+              <div className={styles.section}>
+                <h1 className={styles.titleBoard}>Board of Patrons</h1>
+                <Swiper
+                  spaceBetween={20}
+                  slidesPerView={3.6}
+                  loop={false}
+                  navigation={true}
+                  modules={[Navigation]}
+                >
+                  {lead.map((src, index) => (
+                    <SwiperSlide key={index}>
+                      <div className={styles.containerPhotos}>
+                        <img
+                          src={src.image}
+                          alt={`Event ${index + 1}`}
+                          className={styles.carouselImage}
+                        />
+                        <h2 className={styles.name}>{src.name}</h2>
+                        <h4 className={styles.title}>{src.title}</h4>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+
+              <div className={styles.section}>
+                <h1 className={styles.titleBoard}>Board of Supervisors</h1>
+                <Swiper
+                  spaceBetween={20}
+                  slidesPerView={3.6}
+                  loop={false}
+                  navigation={true}
+                  modules={[Navigation]}
+                >
+                  {lead.map((src, index) => (
+                    <SwiperSlide key={index}>
+                      <div className={styles.containerPhotos}>
+                        <img
+                          src={src.image}
+                          alt={`Event ${index + 1}`}
+                          className={styles.carouselImage}
+                        />
+                        <h2 className={styles.name}>{src.name}</h2>
+                        <h4 className={styles.title}>{src.title}</h4>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+
+              <div className={styles.section}>
+                <h1 className={styles.titleBoard}>Board of Executives </h1>
+                <Swiper
+                  spaceBetween={20}
+                  slidesPerView={3.6}
+                  loop={false}
+                  navigation={true}
+                  modules={[Navigation]}
+                >
+                  {lead.map((src, index) => (
+                    <SwiperSlide key={index}>
+                      <div className={styles.containerPhotos}>
+                        <img
+                          src={src.image}
+                          alt={`Event ${index + 1}`}
+                          className={styles.carouselImage}
+                        />
+                        <h2 className={styles.name}>{src.name}</h2>
+                        <h4 className={styles.title}>{src.title}</h4>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            </div>
+          </div>
+        );
+
+      case "mitra-pemerintahan":
+        return (
+          <div className={styles.partnersGridGov}>
+            {governmentPartners.map((partner) => (
+              <div key={partner.id} className={styles.partnerCard}>
+                <div className={styles.logoContainer}>
+                  <img
+                    src={partner.logo}
+                    alt={partner.alt}
+                    className={styles.govLogo}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        );
+
+      case "mitra-pembangunan":
+        return (
+          <div className={styles.partnersGridMitra}>
+            {developmentPartners.map((partner) => (
+              <div key={partner.id} className={styles.partnerCard}>
+                <div className={styles.logoContainer}>
+                  <img
+                    src={partner.logo}
+                    alt={partner.alt}
+                    className={styles.partnerLogo}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        );
+
+      case "perusahaan-anggota":
+        return (
+          <div className={styles.partnersGrid}>
+            {logos.map((partner) => (
+              <div key={partner.id} className={styles.partnerCard}>
+                <div className={styles.logoContainer}>
+                  <img
+                    src={partner.image}
+                    alt={partner.alt}
+                    className={styles.companyLogo}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         );
 
