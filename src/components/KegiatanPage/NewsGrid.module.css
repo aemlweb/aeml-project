@@ -34,10 +34,10 @@
   height: 303px;
 }
 
-.regularCard:hover {
+/* .regularCard:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .regularImageContainer {
   overflow: hidden;
@@ -51,9 +51,9 @@
   transition: transform 0.3s ease;
 }
 
-.regularImage:hover {
+/* .regularImage:hover {
   transform: scale(1.05);
-}
+} */
 
 .regularContent {
   padding: 10px;
@@ -92,10 +92,10 @@
   cursor: pointer;
   transition: all 0.2s ease;
 }
-
+/* 
 .pageBtn:hover:not(:disabled) {
   background: #f0f0f0;
-}
+} */
 
 .pageBtn:disabled {
   opacity: 0.5;

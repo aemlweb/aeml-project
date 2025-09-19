@@ -1,8 +1,15 @@
+import React, { useState, useEffect } from "react";
 import KegiatanHero from "./KegiatanHero";
 import styles from "./KegiatanPages.module.css";
 import NewsGrid from "./NewsGrid";
+import { getArticles } from "../../helpers/apiService";
 
 const KegiatanPages = () => {
+  const [activities, setActivities] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fallback data in case API fails
   const sampleActivities = [
     {
       id: 1,
@@ -59,15 +66,85 @@ const KegiatanPages = () => {
       image: "https://picsum.photos/id/1037/400/300",
     },
   ];
+
+  useEffect(() => {
+    const loadActivities = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const articlesData = await getArticles();
+
+        // Transform articles data to match the expected format for NewsGrid
+        const transformedActivities = articlesData.map((article) => ({
+          id: article.id,
+          title: article.title,
+          date: article.date,
+          image: article.image,
+          preview: article.preview,
+          body: article.body,
+          type: article.type,
+          linkDownload: article.linkDownload,
+        }));
+
+        setActivities(transformedActivities);
+      } catch (err) {
+        setError("Failed to load activities");
+        console.error("Error loading activities:", err);
+        // Use fallback data if API fails
+        setActivities(sampleActivities);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadActivities();
+  }, []);
+
+  const renderContent = () => {
+    if (loading) {
+      return (
+        <div className={styles.content}>
+          <h2 className={styles.sectionTitle}>Kegiatan AEML</h2>
+          <div className={styles.loadingContainer}>
+            <p>Memuat kegiatan...</p>
+          </div>
+        </div>
+      );
+    }
+
+    if (error && activities.length === 0) {
+      return (
+        <div className={styles.content}>
+          <h2 className={styles.sectionTitle}>Kegiatan AEML</h2>
+          <div className={styles.errorContainer}>
+            <p>Gagal memuat kegiatan. Menampilkan data contoh.</p>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className={styles.content}>
+        <h2 className={styles.sectionTitle}>Kegiatan AEML</h2>
+        {error && (
+          <div className={styles.warningMessage}>
+            <p>⚠️ Menggunakan data fallback karena gagal memuat dari server</p>
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div className={styles.kegiatanPages}>
       <KegiatanHero />
 
-      <div className={styles.content}>
-        <h2 className={styles.sectionTitle}>Kegiatan AEML</h2>
-        {/* Activity cards will be added here later */}
-      </div>
-      <NewsGrid items={sampleActivities} />
+      {renderContent()}
+
+      <NewsGrid
+        items={activities.length > 0 ? activities : sampleActivities}
+        loading={loading}
+      />
     </div>
   );
 };
